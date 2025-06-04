@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <div th:insert="navigation/userNav.html"></div>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <center>
+        <div class="mt-5">
+            <table class="table table-striped table-hover w-50 table-borderless
+      bg-teal-500 bg-clip-padding bg-no-repeat
+      py-1.5
+      text-base
+      font-normal
+      text-gray-700
+">
+                <form action="/book" method="post">
+                    <div
+                            class="alert alert-danger"
+                            th:if="${error}"
+                            th:text="${error}"
+                    ></div>
+                    <div
+                            class="alert alert-success"
+                            th:if="${success}"
+                            th:text="${success}"
+                    ></div>
+                    <tr>
+                        <th>S.No</th>
+                        <th> Email</th>
+                        <th> Address</th>
+                        <th> PhoneNumber</th>
+                        <th> Experience</th>
+                        <th> Actions</th>
+                    </tr>
+
+
+                    <tr th:each="photographer : ${photographer}">
+                        <td th:text="${photographer.id}"></td>
+                        <td th:text="${photographer.email}"></td>
+                        <td th:text="${photographer.address}"></td>
+                        <td th:text="${photographer.phoneNumber}"></td>
+                        <td th:text="${photographer.experience}"></td>
+                        <td>
+                            <input type="number" th:value="${photographer.id}" name="id" hidden >
+                            <input type="text" th:value="${photographer.email}" name="pEmail" hidden/>
+                            <input type="text" th:value="${photographer.address}" name="pAddress" hidden/>
+                            <input type="text" th:value="${photographer.phoneNumber}" name="pPhoneNumber" hidden/>
+                            <input type="text" th:value="${photographer.experience}" name="pExperience" hidden/>
+
+                            <input type="submit" class="btn btn-info" value="Book">
+                        </td>
+                    </tr>
+                </form>
+                </tr>
+            </table>
+        </div>
+    </center>
+</div>
+</body>
+</html>

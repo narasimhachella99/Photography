@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <div th:insert="navigation/adminNav.html"></div>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <center>
+        <div class="mt-5">
+            <table class="table table-striped table-hover w-50 table-borderless
+      bg-teal-500 bg-clip-padding bg-no-repeat
+      py-1.5
+      text-base
+      font-normal
+      text-gray-700
+">
+                <tr>
+                    <th>S.No</th>
+                    <th> Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th> PhoneNumber</th>
+                    <th> State</th>
+                    <th> City</th>
+                    <th> Country</th>
+                </tr>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.id}"></td>
+                    <td th:text="${user.name}"></td>
+                    <td th:text="${user.email}"></td>
+                    <td th:text="${user.address}"></td>
+                    <td th:text="${user.phoneNumber}"></td>
+                    <td th:text="${user.state}"></td>
+                    <td th:text="${user.city}"></td>
+                    <td th:text="${user.country}"></td>
+                </tr>
+                </tr>
+            </table>
+        </div>
+</div>
+</center>
+</body>
+</html>

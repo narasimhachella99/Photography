@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <div th:insert="navigation/userNav.html"></div>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Title</title>
+</head>
+<body class="bg-orange-500">
+
+<center>
+    <div class="card w-50 mt-5 ">
+        <div class="block bg-teal-500">
+            <h2 class="display-3 text-white" th:text="'Welcome' + ' ' +  ${user.name}"></h2>
+        </div>
+    </div>
+</center>
+
+</body>
+</html>
